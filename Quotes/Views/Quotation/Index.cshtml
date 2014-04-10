@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Quotes.Models.Quotation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Search Quotes: @Html.TextBox("filter")
+        <input type="submit" value="Search" />        
+    </p>
+ }
+
+@using (Html.BeginForm())
+{
+    if (ViewBag.ShowDisplayAllButton)
+    {    
+        <input type="submit" value="Display All" />
+    }
+}
+
+@using (Html.BeginForm())
+{
+    if (ViewBag.ShowUnhideButton)
+    {
+        @Html.ActionLink("Unhide", "Unhide")
+    }
+}
+
+
+@using GridMvc.Html
+@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(Quote => Quote.Category.Name).Titled("Category").Sortable(true).Filterable(true);
+    columns.Add(Quote => Quote.Quote).Titled("Quote");
+    columns.Add(Quote => Quote.Author).Titled("Author").Sortable(true).Filterable(true);
+    columns.Add(Quote => Quote.Date).Titled("Date").Sortable(true).Filterable(true).Format("{0:MM/dd/yyyy}");
+    columns.Add().Sanitized(false).Encoded(false).RenderValueAs(Quote => Html.ActionLink("Hide", "HideQuote", "Quotation", new { Id = Quote.QuotationID.ToString() }, null));
+        
+ }).WithPaging(20)
+
+
+
