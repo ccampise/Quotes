@@ -290,7 +290,7 @@ namespace Quotes.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Quotation");
         }
 
         //
@@ -372,7 +372,7 @@ namespace Quotes.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Quotation");
             }
         }
 

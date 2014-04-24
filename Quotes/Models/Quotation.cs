@@ -22,6 +22,8 @@ namespace Quotes.Models
         [DisplayFormat(DataFormatString="{0:MM/dd/yyyy}")]
         public DateTime Date { get; set; }
 
+        public virtual ApplicationUser User { get; set; } 
+
 
         
     }

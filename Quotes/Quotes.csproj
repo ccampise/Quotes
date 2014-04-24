@@ -162,6 +162,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuotationController.cs" />
     <Compile Include="Global.asax.cs">
@@ -186,6 +187,14 @@
     <Compile Include="Migrations\201404040055209_Release.cs" />
     <Compile Include="Migrations\201404040055209_Release.Designer.cs">
       <DependentUpon>201404040055209_Release.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404101700471_usermanager1.cs" />
+    <Compile Include="Migrations\201404101700471_usermanager1.Designer.cs">
+      <DependentUpon>201404101700471_usermanager1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404171648357_applicationuser.cs" />
+    <Compile Include="Migrations\201404171648357_applicationuser.Designer.cs">
+      <DependentUpon>201404171648357_applicationuser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -257,6 +266,9 @@
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\Quotation\AddCategory.cshtml" />
+    <Content Include="Views\Quotation\userQuotes.cshtml" />
+    <Content Include="Views\Admin\AdminIndex.cshtml" />
+    <Content Include="Views\Admin\userSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -283,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404040055209_Release.resx">
       <DependentUpon>201404040055209_Release.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404101700471_usermanager1.resx">
+      <DependentUpon>201404101700471_usermanager1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404171648357_applicationuser.resx">
+      <DependentUpon>201404171648357_applicationuser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
